@@ -65,9 +65,22 @@ const StoryScreen: React.FC<StoryScreenProps> = ({ navigation }) => {
     }
   };
 
+  const clearProgress = async () => {
+    try {
+      await AsyncStorage.removeItem('currentSceneIndex');
+    } catch (error) {
+      console.error('Ошибка при очистке прогресса:', error);
+    }
+  };
+
   const handleOptionSelect = (nextIndex) => {
     setCurrentIndex(nextIndex);
     saveProgress(nextIndex);
+    
+    // If the next index is the last scene, clear the progress
+    if (nextIndex === storyData.scenes.length - 1) {
+      clearProgress();
+    }
   };
 
   if (loading) {
@@ -104,7 +117,10 @@ const StoryScreen: React.FC<StoryScreenProps> = ({ navigation }) => {
       <Image source={imageSource} style={styles.image} resizeMode="cover" />
       <Text style={{ fontSize: 24, textAlign: 'center', marginVertical: 20 }}>{currentScene.text}</Text>
       {isLastScene ? (
-        <Button title="Вернуться на главный экран" onPress={() => navigation.navigate('Home')} />
+        <Button title="Вернуться на главный экран" onPress={() => {
+          clearProgress(); // Clear progress when going back to home
+          navigation.navigate('Home');
+        }} />
       ) : (
         currentScene.options.map((option, index) => (
           <Button key={index} title={option.text} onPress={() => handleOptionSelect(option.nextIndex)} />
