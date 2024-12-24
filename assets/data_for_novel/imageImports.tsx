@@ -7,7 +7,7 @@ const images = {
     image5: "https://github.com/mindoken/data_for_novel/blob/main/data_for_novel/images/image5.png?raw=true",
     image6: "https://github.com/mindoken/data_for_novel/blob/main/data_for_novel/images/image6.png?raw=true",
     image7: "https://github.com/mindoken/data_for_novel/blob/main/data_for_novel/images/image7.png?raw=true",
-    image8: "https://github.com/mindoken/data_for_novel/blob/main/data_for_novel/images/5307596327154213633.jpg?raw=true",
+    image8: "https://b-mag.ru/wp-content/uploads/2019/08/1success-goal.jpg.webp",
     image9: "https://github.com/mindoken/data_for_novel/blob/main/data_for_novel/images/5307596327154213633.jpg?raw=true",
     image10: "https://github.com/mindoken/data_for_novel/blob/main/data_for_novel/images/5307596327154213633.jpg?raw=true",
     image11: "https://github.com/mindoken/data_for_novel/blob/main/data_for_novel/images/5307596327154213633.jpg?raw=true",
